@@ -7,16 +7,27 @@
 //
 
 import Foundation
+import RealmSwift
+import Realm
 
-struct EventItem {
-    var id: Int = 0
-    var imageUrlStr: String = ""
-    var title: String = ""
-    var location: String = ""
-    var date: Date?
-    var isLiked: Bool = false
+protocol Convertible {
+    init?(object: JSONObject)
+}
+
+class EventItem: Object, Convertible {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var imageUrlStr: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var location: String = ""
+    @objc dynamic var date: Date?
+    @objc dynamic var isLiked: Bool = false
+    override class func primaryKey() -> String? {
+        return "id"
+    }
     
-    init?(object: JSONObject) {
+    required convenience init?(object: JSONObject) {
+        self.init()
+        
         guard let id = object["id"] as? Int else {
                 return nil
         }
@@ -27,5 +38,17 @@ struct EventItem {
         if let dateStr = object["datetime_local"] as? String {
             self.date = dateStr.toDate(withFormat: "yyyy-MM-dd'T'HH:mm:ss)")
         }
+    }
+    
+    required init() {
+        super.init()
+    }
+    
+    required init(value: Any, schema: RLMSchema) {
+        super.init(value: value, schema: schema)
+    }
+    
+    required init(realm: RLMRealm, schema: RLMObjectSchema) {
+        super.init(realm: realm, schema: schema)
     }
 }
