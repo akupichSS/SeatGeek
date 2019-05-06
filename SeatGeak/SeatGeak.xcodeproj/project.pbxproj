@@ -30,6 +30,8 @@
 		320644FD22809118002DB0AE /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320644FB22809118002DB0AE /* EventItem.swift */; };
 		3206450222809207002DB0AE /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320644FF22809207002DB0AE /* String+Date.swift */; };
 		3206450622809480002DB0AE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3206450522809480002DB0AE /* RealmSwift.framework */; };
+		3206450822809942002DB0AE /* UISearchBar+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206450722809942002DB0AE /* UISearchBar+TextField.swift */; };
+		3206450E228099A9002DB0AE /* EventItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206450B228099A9002DB0AE /* EventItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		320644FB22809118002DB0AE /* EventItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		320644FF22809207002DB0AE /* String+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		3206450522809480002DB0AE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		3206450722809942002DB0AE /* UISearchBar+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+TextField.swift"; sourceTree = "<group>"; };
+		3206450B228099A9002DB0AE /* EventItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				320644F922809118002DB0AE /* Model */,
 				320644FE22809207002DB0AE /* Extensions */,
 				320644D7228083DC002DB0AE /* Scenes */,
+				32064509228099A9002DB0AE /* Views */,
 				320644E222808413002DB0AE /* Controllers */,
 				320644B522807671002DB0AE /* Main.storyboard */,
 				320644C322807ABE002DB0AE /* Supporting Files */,
@@ -182,8 +187,25 @@
 			isa = PBXGroup;
 			children = (
 				320644FF22809207002DB0AE /* String+Date.swift */,
+				3206450722809942002DB0AE /* UISearchBar+TextField.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32064509228099A9002DB0AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3206450A228099A9002DB0AE /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3206450A228099A9002DB0AE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3206450B228099A9002DB0AE /* EventItemTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +318,8 @@
 				320644E722808413002DB0AE /* EventDetailsViewModel.swift in Sources */,
 				320644E0228083DD002DB0AE /* SceneTransitionType.swift in Sources */,
 				320644FD22809118002DB0AE /* EventItem.swift in Sources */,
+				3206450E228099A9002DB0AE /* EventItemTableViewCell.swift in Sources */,
+				3206450822809942002DB0AE /* UISearchBar+TextField.swift in Sources */,
 				320644EC22808518002DB0AE /* BindableType.swift in Sources */,
 				3206450222809207002DB0AE /* String+Date.swift in Sources */,
 				320644F72280884B002DB0AE /* SearchRequest.swift in Sources */,

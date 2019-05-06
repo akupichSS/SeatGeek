@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Realm
+import RxDataSources
 
 protocol Convertible {
     init?(object: JSONObject)
@@ -50,5 +51,11 @@ class EventItem: Object, Convertible {
     
     required init(realm: RLMRealm, schema: RLMObjectSchema) {
         super.init(realm: realm, schema: schema)
+    }
+}
+
+extension EventItem: IdentifiableType {
+    var identity: Int {
+        return self.isInvalidated ? 0 : id
     }
 }
