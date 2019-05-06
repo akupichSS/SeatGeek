@@ -1,2 +1,6 @@
+*.framework filter=lfs diff=lfs merge=lfs -text
+*.dSYM filter=lfs diff=lfs merge=lfs -text
+SeatGeak/Carthage/Build/iOS/Realm.framework.dSYM/Contents/Resources/DWARF/Realm filter=lfs diff=lfs merge=lfs -text
+SeatGeak/Carthage/Build/watchOS/Realm.framework.dSYM/Contents/Resources/DWARF/Realm filter=lfs diff=lfs merge=lfs -text
 Realm filter=lfs diff=lfs merge=lfs -text
 RxSwift filter=lfs diff=lfs merge=lfs -text
