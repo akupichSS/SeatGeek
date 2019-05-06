@@ -29,6 +29,7 @@
 		320644F82280884B002DB0AE /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320644F32280884B002DB0AE /* APIRequest.swift */; };
 		320644FD22809118002DB0AE /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320644FB22809118002DB0AE /* EventItem.swift */; };
 		3206450222809207002DB0AE /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320644FF22809207002DB0AE /* String+Date.swift */; };
+		3206450622809480002DB0AE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3206450522809480002DB0AE /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		320644F32280884B002DB0AE /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		320644FB22809118002DB0AE /* EventItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		320644FF22809207002DB0AE /* String+Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
+		3206450522809480002DB0AE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3206450622809480002DB0AE /* RealmSwift.framework in Frameworks */,
 				320644D42280814E002DB0AE /* RxSwift.framework in Frameworks */,
 				320644D52280814E002DB0AE /* RxCocoa.framework in Frameworks */,
 				320644D62280814E002DB0AE /* RxDataSources.framework in Frameworks */,
@@ -117,6 +120,7 @@
 		320644D02280814E002DB0AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3206450522809480002DB0AE /* RealmSwift.framework */,
 				320644D22280814E002DB0AE /* RxCocoa.framework */,
 				320644D32280814E002DB0AE /* RxDataSources.framework */,
 				320644D12280814E002DB0AE /* RxSwift.framework */,
@@ -263,6 +267,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputFileListPaths = (
 			);
