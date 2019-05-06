@@ -60,5 +60,9 @@ struct EventsViewModel {
         return self.sceneCoordinator.transition(to:
             Scene.eventDetails(eventDetailsViewModel), type: .push)
     }
+    
+    func onLiked(_ event: EventItem) -> BehaviorSubject<Bool> {
+        return BehaviorSubject.init(value: true)
+    }
 }
 

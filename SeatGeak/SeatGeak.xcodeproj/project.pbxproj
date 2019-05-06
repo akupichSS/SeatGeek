@@ -33,6 +33,9 @@
 		3206450822809942002DB0AE /* UISearchBar+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206450722809942002DB0AE /* UISearchBar+TextField.swift */; };
 		3206450E228099A9002DB0AE /* EventItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206450B228099A9002DB0AE /* EventItemTableViewCell.swift */; };
 		3206451222809ED7002DB0AE /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3206451122809ED7002DB0AE /* Kingfisher.framework */; };
+		320645152280A11C002DB0AE /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645132280A11C002DB0AE /* NavigationView.swift */; };
+		320645162280A11C002DB0AE /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645142280A11C002DB0AE /* XibView.swift */; };
+		320645182280A148002DB0AE /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645172280A148002DB0AE /* UIView+Nib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		3206450722809942002DB0AE /* UISearchBar+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISearchBar+TextField.swift"; sourceTree = "<group>"; };
 		3206450B228099A9002DB0AE /* EventItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventItemTableViewCell.swift; sourceTree = "<group>"; };
 		3206451122809ED7002DB0AE /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		320645132280A11C002DB0AE /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		320645142280A11C002DB0AE /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		320645172280A148002DB0AE /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			children = (
 				320644FF22809207002DB0AE /* String+Date.swift */,
 				3206450722809942002DB0AE /* UISearchBar+TextField.swift */,
+				320645172280A148002DB0AE /* UIView+Nib.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				3206450A228099A9002DB0AE /* Cells */,
+				320645132280A11C002DB0AE /* NavigationView.swift */,
+				320645142280A11C002DB0AE /* XibView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320645152280A11C002DB0AE /* NavigationView.swift in Sources */,
 				320644DE228083DD002DB0AE /* Scene+ViewController.swift in Sources */,
 				320644F62280884B002DB0AE /* APIClient.swift in Sources */,
 				320644E822808413002DB0AE /* EventsViewModel.swift in Sources */,
@@ -329,7 +339,9 @@
 				3206450222809207002DB0AE /* String+Date.swift in Sources */,
 				320644F72280884B002DB0AE /* SearchRequest.swift in Sources */,
 				320644F82280884B002DB0AE /* APIRequest.swift in Sources */,
+				320645162280A11C002DB0AE /* XibView.swift in Sources */,
 				320644E922808413002DB0AE /* EventsViewController.swift in Sources */,
+				320645182280A148002DB0AE /* UIView+Nib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

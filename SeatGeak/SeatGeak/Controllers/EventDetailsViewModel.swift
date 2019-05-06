@@ -16,7 +16,7 @@ struct EventDetailsViewModel {
     
     let disposeBag = DisposeBag()
     
-    init(event: EventItem, coordinator: SceneCoordinatorType, likeAction: PublishSubject<Bool>) {
+    init(event: EventItem, coordinator: SceneCoordinatorType, likeAction: BehaviorSubject<Bool>) {
         self.event = Observable.just(event)
         self.onBack = AnyObserver { _ in
             coordinator.pop(animated: true)
