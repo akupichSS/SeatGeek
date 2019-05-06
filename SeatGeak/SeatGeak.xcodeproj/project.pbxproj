@@ -36,6 +36,8 @@
 		320645152280A11C002DB0AE /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645132280A11C002DB0AE /* NavigationView.swift */; };
 		320645162280A11C002DB0AE /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645142280A11C002DB0AE /* XibView.swift */; };
 		320645182280A148002DB0AE /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645172280A148002DB0AE /* UIView+Nib.swift */; };
+		3206451B2280B0BA002DB0AE /* EventsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645192280B0BA002DB0AE /* EventsStorage.swift */; };
+		3206451C2280B0BA002DB0AE /* EventsStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206451A2280B0BA002DB0AE /* EventsStorageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		320645132280A11C002DB0AE /* NavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		320645142280A11C002DB0AE /* XibView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		320645172280A148002DB0AE /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		320645192280B0BA002DB0AE /* EventsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsStorage.swift; sourceTree = "<group>"; };
+		3206451A2280B0BA002DB0AE /* EventsStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsStorageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 		320644ED2280884B002DB0AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				320645192280B0BA002DB0AE /* EventsStorage.swift */,
+				3206451A2280B0BA002DB0AE /* EventsStorageType.swift */,
 				320644F02280884B002DB0AE /* API */,
 			);
 			path = Services;
@@ -335,12 +341,14 @@
 				320644FD22809118002DB0AE /* EventItem.swift in Sources */,
 				3206450E228099A9002DB0AE /* EventItemTableViewCell.swift in Sources */,
 				3206450822809942002DB0AE /* UISearchBar+TextField.swift in Sources */,
+				3206451C2280B0BA002DB0AE /* EventsStorageType.swift in Sources */,
 				320644EC22808518002DB0AE /* BindableType.swift in Sources */,
 				3206450222809207002DB0AE /* String+Date.swift in Sources */,
 				320644F72280884B002DB0AE /* SearchRequest.swift in Sources */,
 				320644F82280884B002DB0AE /* APIRequest.swift in Sources */,
 				320645162280A11C002DB0AE /* XibView.swift in Sources */,
 				320644E922808413002DB0AE /* EventsViewController.swift in Sources */,
+				3206451B2280B0BA002DB0AE /* EventsStorage.swift in Sources */,
 				320645182280A148002DB0AE /* UIView+Nib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

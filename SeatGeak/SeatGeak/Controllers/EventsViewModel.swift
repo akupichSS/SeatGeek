@@ -15,14 +15,16 @@ struct EventsViewModel {
     
     let sceneCoordinator: SceneCoordinatorType
     let apiClient: APIClient
+    let storage: EventsStorageType
     let disposeBag = DisposeBag()
     
     let searchText = BehaviorSubject(value: "")
     
     var events = BehaviorSubject<[EventsSection]>(value: [])
     
-    init(apiClient: APIClient, coordinator: SceneCoordinatorType) {
+    init(apiClient: APIClient, storage: EventsStorageType, coordinator: SceneCoordinatorType) {
         self.apiClient = apiClient
+        self.storage = storage
         self.sceneCoordinator = coordinator
         
         bindOutput()

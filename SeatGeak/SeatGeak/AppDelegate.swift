@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let apiClient = APIClient()
+        let storage = EventsStorage()
         let sceneCoordinator = SceneCoordinator(window: window!)
-        let eventsViewModel = EventsViewModel(apiClient: apiClient, coordinator:
+        
+        let eventsViewModel = EventsViewModel(apiClient: apiClient, storage: storage, coordinator:
             sceneCoordinator)
         let firstScene = Scene.events(eventsViewModel)
         sceneCoordinator.transition(to: firstScene, type: .root)
