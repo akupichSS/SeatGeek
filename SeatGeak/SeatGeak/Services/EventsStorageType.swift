@@ -13,6 +13,7 @@ import RealmSwift
 enum EventsStorageError: Error {
     case creationFailed(EventItem)
     case deletionFailed(EventItem)
+    case searchingFailed(EventItem)
 }
 
 protocol EventsStorageType {
@@ -20,4 +21,6 @@ protocol EventsStorageType {
     func create(event: EventItem) -> Observable<Void>
     @discardableResult
     func delete(event: EventItem) -> Observable<Void>
+    @discardableResult
+    func find(event:EventItem) -> EventItem? 
 }

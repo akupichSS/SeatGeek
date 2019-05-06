@@ -6,6 +6,7 @@
 //  Copyright © 2019 Andriy Kupich. All rights reserved.
 //
 
+import Foundation
 import RxSwift
 import RxDataSources
 
@@ -37,16 +38,17 @@ struct EventsViewModel {
             .flatMap { request in
                 return self.apiClient.eventsSearch(request: request)
             }
-            .map { result -> [EventsSection] in
+            .map { result -> [EventItem] in
                 switch result {
                 case .success(let events):
-                    return [EventsSection(model: "Section Events", items: events)]
+                    return events.map (self.configureLikeStatus)
                 case .failure(let error):
                     // TODO: Display UI error
                     print ("APIError = \(error)")
                     return []
                 }
             }
+            .map{ [EventsSection(model: "Section Events", items: $0)] }
             .asDriver(onErrorJustReturn: [])
             .drive(events)
             .disposed(by: disposeBag)
@@ -63,8 +65,24 @@ struct EventsViewModel {
             Scene.eventDetails(eventDetailsViewModel), type: .push)
     }
     
-    func onLiked(_ event: EventItem) -> BehaviorSubject<Bool> {
-        return BehaviorSubject.init(value: true)
+    func onLiked(_ event:EventItem) -> PublishSubject<Bool> {
+        let likeSubject = PublishSubject<Bool>()
+        
+        likeSubject.subscribe(onNext: { (isFavourite) in
+            if isFavourite {
+                self.storage.create(event: event)
+            } else {
+                self.storage.delete(event: event)
+            }
+            
+        }).disposed(by: disposeBag)
+        
+        return likeSubject
+    }
+    
+    private func configureLikeStatus(for event:EventItem) ->EventItem {
+        event.isLiked = storage.find(event: event) != nil
+        return event
     }
 }
 

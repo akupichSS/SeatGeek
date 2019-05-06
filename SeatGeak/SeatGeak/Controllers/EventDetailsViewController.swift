@@ -32,8 +32,18 @@ class EventDetailsViewController: UIViewController, BindableType {
                 self?.setupData(event: event)
             }).disposed(by: disposeBag)
         
+        viewModel.onLike
+            .bind(to: navView.rightNavigationButton.rx.isSelected)
+            .disposed(by: disposeBag)
+        
         navView.leftNavigationButton.rx.tap
             .bind(to: viewModel.onBack)
+            .disposed(by: disposeBag)
+        
+        navView.rightNavigationButton.rx.tap
+            .withLatestFrom(viewModel.event)
+            .map {!$0.isLiked}
+            .bind(to: viewModel.onLike)
             .disposed(by: disposeBag)
     }
     

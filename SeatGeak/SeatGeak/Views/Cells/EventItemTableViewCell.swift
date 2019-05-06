@@ -34,6 +34,11 @@ class EventItemTableViewCell: UITableViewCell {
         if !item.imageUrlStr.isEmpty, let imageUrl = URL(string: item.imageUrlStr) {
             eventImageView.kf.setImage(with: imageUrl)
         }
+        item.rx.observe(String.self, "isLiked")
+            .subscribe(onNext: { [weak self] isLiked in
+                self?.isLikedImageView.isHidden = !item.isLiked
+            })
+            .disposed(by: disposeBag)
         
         titleLabel.text = item.title
         locationLabel.text = item.location

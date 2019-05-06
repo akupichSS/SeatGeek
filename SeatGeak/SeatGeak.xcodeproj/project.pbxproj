@@ -174,9 +174,9 @@
 		320644ED2280884B002DB0AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				320644F02280884B002DB0AE /* API */,
 				320645192280B0BA002DB0AE /* EventsStorage.swift */,
 				3206451A2280B0BA002DB0AE /* EventsStorageType.swift */,
-				320644F02280884B002DB0AE /* API */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 		32064509228099A9002DB0AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3206450A228099A9002DB0AE /* Cells */,
 				320645132280A11C002DB0AE /* NavigationView.swift */,
 				320645142280A11C002DB0AE /* XibView.swift */,
+				3206450A228099A9002DB0AE /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -16,10 +16,18 @@ struct EventDetailsViewModel {
     
     let disposeBag = DisposeBag()
     
-    init(event: EventItem, coordinator: SceneCoordinatorType, likeAction: BehaviorSubject<Bool>) {
+    init(event: EventItem, coordinator: SceneCoordinatorType, likeAction: PublishSubject<Bool>) {
         self.event = Observable.just(event)
         self.onBack = AnyObserver { _ in
             coordinator.pop(animated: true)
         }
+        
+        self.onLike
+            .map{
+                event.isLiked = $0
+                return $0
+            }
+            .bind(to: likeAction)
+            .disposed(by: disposeBag)
     }
 }

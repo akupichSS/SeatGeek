@@ -45,4 +45,11 @@ struct EventsStorage: EventsStorageType {
         }
         return result ?? .error(EventsStorageError.deletionFailed(event))
     }
+    
+    @discardableResult
+    func find(event:EventItem) -> EventItem? {
+        return withRealm("searching") { realm in
+            return realm.object(ofType: EventItem.self, forPrimaryKey: event.id)
+            } ?? nil
+    }
 }
