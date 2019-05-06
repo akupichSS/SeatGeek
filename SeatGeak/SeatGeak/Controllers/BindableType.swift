@@ -20,4 +20,5 @@ extension BindableType where Self: UIViewController {
         viewModel = model
         loadViewIfNeeded()
         bindViewModel()
-    } }
+    }
+}

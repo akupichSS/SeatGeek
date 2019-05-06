@@ -9,5 +9,11 @@
 import RxSwift
 
 struct EventsViewModel {
+    let sceneCoordinator: SceneCoordinatorType
+    let apiClient: APIClient
     
+    init(apiClient: APIClient, coordinator: SceneCoordinatorType) {
+        self.apiClient = apiClient
+        self.sceneCoordinator = coordinator
+    }
 }
