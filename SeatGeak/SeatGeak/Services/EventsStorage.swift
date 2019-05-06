@@ -52,4 +52,11 @@ struct EventsStorage: EventsStorageType {
             return realm.object(ofType: EventItem.self, forPrimaryKey: event.id)
             } ?? nil
     }
+    
+    func logCountOfStoredEvents () {
+        _ = withRealm("count") { realm in
+            let count = realm.objects(EventItem.self).count
+            print ("[DEBUG] Liked events count = \(count)")
+        }
+    }
 }

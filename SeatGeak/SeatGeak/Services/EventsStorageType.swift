@@ -22,5 +22,6 @@ protocol EventsStorageType {
     @discardableResult
     func delete(event: EventItem) -> Observable<Void>
     @discardableResult
-    func find(event:EventItem) -> EventItem? 
+    func find(event:EventItem) -> EventItem?
+    func logCountOfStoredEvents ()
 }

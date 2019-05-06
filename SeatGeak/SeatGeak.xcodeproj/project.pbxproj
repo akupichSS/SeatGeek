@@ -113,14 +113,14 @@
 			isa = PBXGroup;
 			children = (
 				320644B122807671002DB0AE /* AppDelegate.swift */,
+				320644D7228083DC002DB0AE /* Scenes */,
+				320644E222808413002DB0AE /* Controllers */,
+				32064509228099A9002DB0AE /* Views */,
 				320644ED2280884B002DB0AE /* Services */,
 				320644F922809118002DB0AE /* Model */,
 				320644FE22809207002DB0AE /* Extensions */,
-				320644D7228083DC002DB0AE /* Scenes */,
-				32064509228099A9002DB0AE /* Views */,
-				320644E222808413002DB0AE /* Controllers */,
-				320644B522807671002DB0AE /* Main.storyboard */,
 				320644C322807ABE002DB0AE /* Supporting Files */,
+				320644B522807671002DB0AE /* Main.storyboard */,
 			);
 			path = SeatGeak;
 			sourceTree = "<group>";
@@ -175,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				320644F02280884B002DB0AE /* API */,
-				320645192280B0BA002DB0AE /* EventsStorage.swift */,
 				3206451A2280B0BA002DB0AE /* EventsStorageType.swift */,
+				320645192280B0BA002DB0AE /* EventsStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

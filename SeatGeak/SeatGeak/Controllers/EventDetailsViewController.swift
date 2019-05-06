@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import Kingfisher
 
-class EventDetailsViewController: UIViewController, BindableType {
+class EventDetailsViewController: UIViewController, BindableViewController {
     
     @IBOutlet var eventImageView: UIImageView! {
         didSet {

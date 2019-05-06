@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-class EventsViewController: UIViewController, BindableType {
+class EventsViewController: UIViewController, BindableViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar! {

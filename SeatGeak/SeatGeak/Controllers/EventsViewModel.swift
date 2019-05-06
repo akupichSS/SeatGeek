@@ -74,8 +74,12 @@ struct EventsViewModel {
             } else {
                 self.storage.delete(event: event)
             }
+            #if DEBUG
+                self.storage.logCountOfStoredEvents()
+            #endif
             
         }).disposed(by: disposeBag)
+        
         
         return likeSubject
     }
