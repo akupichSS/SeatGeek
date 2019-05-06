@@ -9,5 +9,17 @@
 import RxSwift
 
 struct EventDetailsViewModel {
-
+    let event: Observable<EventItem>
+    
+    let onLike = PublishSubject<Bool>()
+    let onBack: AnyObserver<Void>
+    
+    let disposeBag = DisposeBag()
+    
+    init(event: EventItem, coordinator: SceneCoordinatorType, likeAction: PublishSubject<Bool>) {
+        self.event = Observable.just(event)
+        self.onBack = AnyObserver { _ in
+            coordinator.pop(animated: true)
+        }
+    }
 }

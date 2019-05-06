@@ -49,5 +49,16 @@ struct EventsViewModel {
             .drive(events)
             .disposed(by: disposeBag)
     }
+    
+    @discardableResult
+    func showDetails(of event:EventItem) -> Completable {
+        let eventDetailsViewModel = EventDetailsViewModel(
+            event: event,
+            coordinator: self.sceneCoordinator,
+            likeAction: self.onLiked(event)
+        )
+        return self.sceneCoordinator.transition(to:
+            Scene.eventDetails(eventDetailsViewModel), type: .push)
+    }
 }
 

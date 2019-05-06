@@ -55,6 +55,16 @@ class EventsViewController: UIViewController, BindableType {
             .subscribe(onNext: {
                 self.searchBar?.resignFirstResponder()
             }).disposed(by: disposeBag)
+        
+        Observable
+            .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(EventItem.self))
+            .map { indexPath, model in
+                self.tableView.deselectRow(at: indexPath, animated: true)
+                return model
+            }
+            .subscribe(onNext: {
+                self.viewModel.showDetails(of: $0)
+            }).disposed(by: disposeBag)
     }
     
     private func configureDataSource() {

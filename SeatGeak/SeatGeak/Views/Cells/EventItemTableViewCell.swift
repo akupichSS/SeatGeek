@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class EventItemTableViewCell: UITableViewCell {
     
@@ -31,7 +32,7 @@ class EventItemTableViewCell: UITableViewCell {
     
     func configure(with item: EventItem) {
         if !item.imageUrlStr.isEmpty, let imageUrl = URL(string: item.imageUrlStr) {
-            // TODO: set image from URL
+            eventImageView.kf.setImage(with: imageUrl)
         }
         
         titleLabel.text = item.title
