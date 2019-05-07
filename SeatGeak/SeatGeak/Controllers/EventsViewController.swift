@@ -34,7 +34,7 @@ class EventsViewController: UIViewController, BindableViewController {
     }
     
     func bindViewModel() {
-        viewModel.events.asObservable()
+        viewModel.sectionsWithEvents
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
         
@@ -70,7 +70,7 @@ class EventsViewController: UIViewController, BindableViewController {
     private func configureDataSource() {
         dataSource = RxTableViewSectionedReloadDataSource<EventsSection>(configureCell: { dataSource, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier:
-                "EventItemCell", for: indexPath) as! EventItemTableViewCell
+                EventItemTableViewCell.identifier, for: indexPath) as! EventItemTableViewCell
             cell.configure(with: item)
             return cell
         })

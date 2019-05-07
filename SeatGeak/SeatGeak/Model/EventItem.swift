@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 import Realm
 import RxDataSources
+import RxSwift
 
 protocol Convertible {
     init?(object: JSONObject)
@@ -57,5 +58,25 @@ class EventItem: Object, Convertible {
 extension EventItem: IdentifiableType {
     var identity: Int {
         return self.isInvalidated ? 0 : id
+    }
+}
+
+extension EventItem {
+    func changeLikeStatus(to isLiked:Bool, in storage: EventsStorageType) {
+        self.isLiked = isLiked
+        if isLiked {
+            storage.create(event: self)
+        } else {
+            storage.delete(event: self)
+        }
+        
+        #if DEBUG
+            storage.logCountOfStoredEvents()
+        #endif
+    }
+    
+    func setupLikeStatus(_ storage: EventsStorageType) ->EventItem {
+        self.isLiked = storage.find(event: self) != nil
+        return self
     }
 }

@@ -13,7 +13,7 @@
         <!--Events View Controller-->
         <scene sceneID="vMn-ja-dXG">
             <objects>
-                <viewController storyboardIdentifier="EventsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="52B-r9-9Rb" customClass="EventsViewController" customModule="SeatGeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="52B-r9-9Rb" customClass="EventsViewController" customModule="SeatGeak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YHB-3v-JAx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="safeArea" id="Sox-kP-VgF"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventItemCell" rowHeight="100" id="KmF-nx-hmn" customClass="EventItemTableViewCell" customModule="SeatGeek" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventItemTableViewCell" rowHeight="100" id="KmF-nx-hmn" customClass="EventItemTableViewCell" customModule="SeatGeak" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KmF-nx-hmn" id="R6w-F7-r6c">
@@ -157,12 +157,12 @@
         <!--Event Details View Controller-->
         <scene sceneID="9TJ-4I-2gy">
             <objects>
-                <viewController storyboardIdentifier="EventDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ydE-vb-bt8" customClass="EventDetailsViewController" customModule="SeatGeek" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ydE-vb-bt8" customClass="EventDetailsViewController" customModule="SeatGeak" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NhP-of-SZ6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODD-Bm-TWj" customClass="NavigationView" customModule="SeatGeek" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODD-Bm-TWj" customClass="NavigationView" customModule="SeatGeak" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="58" width="414" height="59.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="9Z3-80-AqD">

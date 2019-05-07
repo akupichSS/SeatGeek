@@ -27,7 +27,6 @@ class EventDetailsViewController: UIViewController, BindableViewController {
     
     func bindViewModel() {
         viewModel.event
-            .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] (event) in
                 self?.setupData(event: event)
             }).disposed(by: disposeBag)

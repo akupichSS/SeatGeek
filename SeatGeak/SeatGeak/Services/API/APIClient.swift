@@ -53,7 +53,7 @@ final class APIClient {
             }
         }
         
-        return Single<[String: Any]>.create { single in
+        return Single<JSONObject>.create { single in
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     let errorCode = (error as NSError).code

@@ -38,6 +38,7 @@
 		320645182280A148002DB0AE /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645172280A148002DB0AE /* UIView+Nib.swift */; };
 		3206451B2280B0BA002DB0AE /* EventsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320645192280B0BA002DB0AE /* EventsStorage.swift */; };
 		3206451C2280B0BA002DB0AE /* EventsStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206451A2280B0BA002DB0AE /* EventsStorageType.swift */; };
+		323CC52F228201F000FD452B /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323CC52E228201F000FD452B /* EventsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		320645172280A148002DB0AE /* UIView+Nib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		320645192280B0BA002DB0AE /* EventsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsStorage.swift; sourceTree = "<group>"; };
 		3206451A2280B0BA002DB0AE /* EventsStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsStorageType.swift; sourceTree = "<group>"; };
+		323CC52E228201F000FD452B /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 		320644F922809118002DB0AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				323CC52E228201F000FD452B /* EventsList.swift */,
 				320644FB22809118002DB0AE /* EventItem.swift */,
 			);
 			path = Model;
@@ -331,6 +334,7 @@
 				320644DE228083DD002DB0AE /* Scene+ViewController.swift in Sources */,
 				320644F62280884B002DB0AE /* APIClient.swift in Sources */,
 				320644E822808413002DB0AE /* EventsViewModel.swift in Sources */,
+				323CC52F228201F000FD452B /* EventsList.swift in Sources */,
 				320644DF228083DD002DB0AE /* SceneCoordinatorType.swift in Sources */,
 				320644B222807671002DB0AE /* AppDelegate.swift in Sources */,
 				320644DD228083DD002DB0AE /* Scene.swift in Sources */,
