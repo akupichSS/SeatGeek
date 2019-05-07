@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Kingfisher",
-      "hash" : "53cd526ef3e6f194d1a7ac13f5fbbaa8bdc45ba8f42ffae36de6fa6a16c995b9",
+      "hash" : "b9106c0316e31878e847b5c70cec8cfabfd29756bd02c7042b02e9988af7e639",
       "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
     }
   ]

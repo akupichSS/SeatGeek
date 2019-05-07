@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3f7d8ee0c6095603ccd23ed2200c2c1ec6192cf9c49e31f5632d7833cb7baa64
-size 484
+//
+//  Atomic+Overrides.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 1/29/19.
+//  Copyright © 2019 Krunoslav Zaher. All rights reserved.
+//
+
+/// This is a workaround for the overloaded `load` symbol.
+@inline(__always)
+func globalLoad(_ this: AtomicInt) -> Int32 {
+    return load(this)
+}
+
+/// This is a workaround for the overloaded `add` symbol.
+@inline(__always)
+@discardableResult
+func globalAdd(_ this: AtomicInt, _ value: Int32) -> Int32 {
+    return add(this, value)
+}

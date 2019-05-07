@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:797897d97ac868bd0cc51b373acc69c84908e501c39dad2c949b53e684b7f3cc
-size 800
+//
+//  Resources.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 1/21/17.
+//  Copyright © 2017 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+
+#if TRACE_RESOURCES
+    struct Resources {
+        static func incrementTotal() -> Int32 {
+            return RxSwift.Resources.incrementTotal()
+        }
+
+        static func decrementTotal() -> Int32 {
+            return RxSwift.Resources.decrementTotal()
+        }
+
+        static var numberOfSerialDispatchQueueObservables: Int32 {
+            return RxSwift.Resources.numberOfSerialDispatchQueueObservables
+        }
+
+        static var numberOfMapOperators: Int32 {
+            return RxSwift.Resources.numberOfMapOperators
+        }
+
+        static var total: Int32 {
+            return RxSwift.Resources.total
+        }
+    }
+#endif

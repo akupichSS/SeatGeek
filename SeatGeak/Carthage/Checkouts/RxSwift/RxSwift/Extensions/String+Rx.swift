@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f77253abfe5af914645060ee1b9d6b294c7c0677161cc464e2673f50d69d5291
-size 572
+//
+//  String+Rx.swift
+//  RxSwift
+//
+//  Created by Krunoslav Zaher on 12/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+extension String {
+    /// This is needed because on Linux Swift doesn't have `rangeOfString(..., options: .BackwardsSearch)`
+    func lastIndexOf(_ character: Character) -> Index? {
+        var index = self.endIndex
+        while index > self.startIndex {
+            index = self.index(before: index)
+            if self[index] == character {
+                return index
+            }
+        }
+
+        return nil
+    }
+}

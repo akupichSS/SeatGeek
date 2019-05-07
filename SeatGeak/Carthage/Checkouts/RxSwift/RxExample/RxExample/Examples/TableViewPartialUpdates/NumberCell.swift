@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db643a9995c9902a4af64213990efa68722ed9c71d0cb9d4233d2546e6e4fac4
-size 239
+//
+//  NumberCell.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 7/2/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+
+class NumberCell : UICollectionViewCell {
+    @IBOutlet var value: UILabel?
+}

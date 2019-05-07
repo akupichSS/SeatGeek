@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:033d434ea9fdb3c511a2fbd391435f4c3f9249a392ab72050754613285552eea
-size 191
+//
+//  RxTest-iOS-Bridging-Header.h
+//  Tests
+//
+//  Created by Krunoslav Zaher on 11/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+#import "RXObjCRuntime+Testing.h"

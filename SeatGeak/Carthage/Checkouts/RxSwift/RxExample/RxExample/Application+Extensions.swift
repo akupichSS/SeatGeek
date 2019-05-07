@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:93bd15de5bdbcb32310f73af1b4121b9680314e27f210776e68b803ac934433f
-size 459
+//
+//  Application+Extensions.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 8/20/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+#if os(iOS)
+    import UIKit
+    typealias OSApplication = UIApplication
+#elseif os(macOS)
+    import Cocoa
+    typealias OSApplication = NSApplication
+#endif
+
+extension OSApplication {
+    static var isInUITest: Bool {
+        return ProcessInfo.processInfo.environment["isUITest"] != nil;
+    }
+}

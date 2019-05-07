@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6d9b883532695f61f6f685e54393ecd7655f40bbce42f5563f3fe928d85d1cdc
-size 462
+ /*
+ *  Created by Phil on 01/11/2010.
+ *  Copyright 2010 Two Blue Cubes Ltd. All rights reserved.
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+#ifndef TWOBLUECUBES_CATCH_WITH_MAIN_HPP_INCLUDED
+#define TWOBLUECUBES_CATCH_WITH_MAIN_HPP_INCLUDED
+
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+
+#endif // TWOBLUECUBES_CATCH_WITH_MAIN_HPP_INCLUDED

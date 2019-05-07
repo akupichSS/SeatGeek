@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cd8cf18af7f43f8ebbe16441b579c2345fe43dfb9d149f93598f98d68e01bc91
-size 594
+/*
+ *  Copyright 2014 Two Blue Cubes Ltd
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+
+#ifndef TWOBLUECUBES_CATCH_REENABLE_WARNINGS_H_INCLUDED
+#define TWOBLUECUBES_CATCH_REENABLE_WARNINGS_H_INCLUDED
+
+#ifdef __clang__
+#    ifdef __ICC // icpc defines the __clang__ macro
+#        pragma warning(pop)
+#    else
+#        pragma clang diagnostic pop
+#    endif
+#elif defined __GNUC__
+#    pragma GCC diagnostic pop
+#endif
+
+#endif // TWOBLUECUBES_CATCH_REENABLE_WARNINGS_H_INCLUDED

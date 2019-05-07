@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b3c1c82037782842695384ef2fad9d6965029ba08f39cd90f721d12f8871f3f1
-size 1159
+Math Behind Rx
+==============
+
+## Duality between Observer and Iterator / Enumerator / Generator / Sequences
+
+There is a duality between the observer and generator patterns. This is what enables us to transition from the async callback world to the synchronous world of sequence transformations.
+
+In short, the enumerator and observer patterns both describe sequences. It's fairly obvious why the enumerator defines a sequence, but the observer is slightly more complicated.
+
+There is, however, a pretty simple example that doesn't require a lot of mathematical knowledge. Assume that you are observing the position of your mouse cursor on screen at given times. Over time, these mouse positions form a sequence. This is, in essence, an observable sequence.
+
+There are two basic ways elements of a sequence can be accessed:
+
+* Push interface - Observer (observed elements over time make a sequence)
+* Pull interface - Iterator / Enumerator / Generator
+
+You can also see a more formal explanation in this video:
+
+* [Expert to Expert: Brian Beckman and Erik Meijer - Inside the .NET Reactive Framework (Rx) (video)](https://www.youtube.com/watch?v=looJcaeboBY)

@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b261804a448911000a79c1798c28910e6a2f2e858dc6b12a41a3b95af152ed2
-size 394
+//
+//  FloatingPointType+IdentifiableType.swift
+//  RxDataSources
+//
+//  Created by Krunoslav Zaher on 7/4/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import Foundation
+
+extension FloatingPoint {
+    typealias identity = Self
+
+    public var identity: Self {
+        return self
+    }
+}
+
+extension Float : IdentifiableType {
+
+}
+
+extension Double : IdentifiableType {
+
+}

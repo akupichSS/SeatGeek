@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0b36804f770230c7c2d1fd94044b00148758231bf26d64426349ceae65887664
-size 323
+//
+//  String+IdentifiableType.swift
+//  RxDataSources
+//
+//  Created by Krunoslav Zaher on 7/4/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import Foundation
+
+extension String : IdentifiableType {
+    public typealias Identity = String
+
+    public var identity: String {
+        return self
+    }
+}

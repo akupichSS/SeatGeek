@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:987ca80846e6c4d6d590bf954ba60a9ee8b4d64b37d550e3cda87601d86a13c0
-size 619
+//
+//  BlockingObservable.swift
+//  RxBlocking
+//
+//  Created by Krunoslav Zaher on 10/19/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+
+/**
+`BlockingObservable` is a variety of `Observable` that provides blocking operators. 
+
+It can be useful for testing and demo purposes, but is generally inappropriate for production applications.
+
+If you think you need to use a `BlockingObservable` this is usually a sign that you should rethink your
+design.
+*/
+public struct BlockingObservable<Element> {
+    let timeout: TimeInterval?
+    let source: Observable<Element>
+}

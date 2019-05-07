@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bead9fd1e0bef3dd68be5eb8d65f83abceebeebae77a3507e6b9058d1e119e12
-size 758
+//
+//  AssumptionsTest.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 2/14/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import XCTest
+import RxSwift
+import class Foundation.NSNull
+
+final class AssumptionsTest : RxTest {
+    
+    func testResourceLeaksDetectionIsTurnedOn() {
+#if TRACE_RESOURCES
+        let startResourceCount = Resources.total
+    
+        var observable: Observable<Int>! = Observable.just(1)
+
+        XCTAssertTrue(observable != nil)
+        XCTAssertEqual(Resources.total, (startResourceCount + 1) as Int32)
+        
+        observable = nil
+
+        XCTAssertEqual(Resources.total, startResourceCount)
+#elseif RELEASE
+
+#else
+        XCTAssert(false, "Can't run unit tests in without tracing")
+#endif
+    }
+}

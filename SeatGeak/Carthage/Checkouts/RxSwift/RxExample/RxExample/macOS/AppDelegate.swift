@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15f5553c630eb20117fb3b594df5b110cd9a209c44df62a8fd8aadec783d8b40
-size 521
+//
+//  AppDelegate.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 5/19/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import Cocoa
+
+@NSApplicationMain
+class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    func applicationDidFinishLaunching(aNotification: Notification) {
+        // Insert code here to initialize your application
+    }
+    
+    func applicationWillTerminate(aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
+    
+    
+}

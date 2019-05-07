@@ -1,3 +1,18 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9f4a506f9a52643035c44183a19aa08cbf33c4674044921de5931fbe0c1b699f
-size 531
+//
+//  MainThreadPrimitiveHotObservable.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 10/14/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import XCTest
+import Dispatch
+
+final class MainThreadPrimitiveHotObservable<Element: Equatable> : PrimitiveHotObservable<Element> {
+    override func subscribe<Observer: ObserverType>(_ observer: Observer) -> Disposable where Observer.Element == Element {
+        XCTAssertTrue(DispatchQueue.isMain)
+        return super.subscribe(observer)
+    }
+}

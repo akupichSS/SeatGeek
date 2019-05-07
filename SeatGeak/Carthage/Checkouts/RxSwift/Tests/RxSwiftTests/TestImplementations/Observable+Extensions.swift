@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:962476a0ad31e21579b04f6d13208bfe1fa65dcf6c727b7fa59f3948234ed9e6
-size 437
+//
+//  Observable+Extensions.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 6/4/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import RxTest
+
+public func == <T>(lhs: Observable<T>, rhs: Observable<T>) -> Bool {
+    return lhs === rhs
+}
+
+extension TestableObservable : Equatable {
+
+}
+
+public func == <T>(lhs: TestableObservable<T>, rhs: TestableObservable<T>) -> Bool {
+    return lhs === rhs
+}
+

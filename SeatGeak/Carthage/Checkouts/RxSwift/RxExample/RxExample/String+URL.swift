@@ -1,3 +1,14 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0ca028306af59cdf571e908cca414b0681ca8d35ff92156cde0647a413cc1ed5
-size 293
+//
+//  String+URL.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 12/28/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+
+extension String {
+    var URLEscaped: String {
+       return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
+    }
+}

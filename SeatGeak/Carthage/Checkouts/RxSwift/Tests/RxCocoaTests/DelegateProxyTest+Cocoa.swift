@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:357739eefa774b5e4eb38fb4227ef7aa05c0a7336a3707bb33be1687c92e46a1
-size 1206
+//
+//  DelegateProxyTest+Cocoa.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 12/5/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import Cocoa
+@testable import RxCocoa
+@testable import RxSwift
+import XCTest
+
+// MARK: Tests
+
+extension DelegateProxyTest {
+    func test_NSTextFieldDelegateExtension() {
+        performDelegateTest(NSTextFieldSubclass(frame: CGRect.zero)) { ExtendNSTextFieldDelegateProxy(textFieldSubclass: $0) }
+    }
+}
+
+// MARK: Mocks
+
+class ExtendNSTextFieldDelegateProxy
+    : RxTextFieldDelegateProxy
+    , TestDelegateProtocol {
+    init(textFieldSubclass: NSTextFieldSubclass) {
+        super.init(textField: textFieldSubclass)
+    }
+}
+
+final class NSTextFieldSubclass
+    : NSTextField
+    , TestDelegateControl {
+    func doThatTest(_ value: Int) {
+        (delegate as! TestDelegateProtocol).testEventHappened?(value)
+    }
+
+    var delegateProxy: DelegateProxy<NSTextField, NSTextFieldDelegate> {
+        return self.rx.delegate
+    }
+
+    func setMineForwardDelegate(_ testDelegate: NSTextFieldDelegate) -> Disposable {
+        return RxTextFieldDelegateProxy.installForwardDelegate(testDelegate, retainDelegate: false, onProxyForObject: self)
+    }
+}

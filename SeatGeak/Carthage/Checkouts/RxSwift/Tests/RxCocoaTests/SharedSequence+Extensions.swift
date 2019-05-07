@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a025ccbb5d55100d55a439087aca2d04ab9789b343c22431325c02ade14bb0dd
-size 360
+//
+//  SharedSequence+Extensions.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 12/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxCocoa
+
+extension SharedSequence : Equatable {
+
+}
+
+public func == <S, T>(lhs: SharedSequence<S, T>, rhs: SharedSequence<S, T>) -> Bool {
+    return lhs.asObservable() === rhs.asObservable()
+}

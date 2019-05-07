@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f5b5ddf3b27328026bb0a1167baecd9b110fb4f7ef34b481b27454ab73c2d34e
-size 749
+//
+//  ItemPath.swift
+//  RxDataSources
+//
+//  Created by Krunoslav Zaher on 1/9/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import Foundation
+
+public struct ItemPath {
+    public let sectionIndex: Int
+    public let itemIndex: Int
+
+    public init(sectionIndex: Int, itemIndex: Int) {
+        self.sectionIndex = sectionIndex
+        self.itemIndex = itemIndex
+    }
+}
+
+extension ItemPath : Equatable {
+    
+}
+
+public func == (lhs: ItemPath, rhs: ItemPath) -> Bool {
+    return lhs.sectionIndex == rhs.sectionIndex && lhs.itemIndex == rhs.itemIndex
+}
+
+extension ItemPath: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(sectionIndex.byteSwapped)
+        hasher.combine(itemIndex)
+    }
+}

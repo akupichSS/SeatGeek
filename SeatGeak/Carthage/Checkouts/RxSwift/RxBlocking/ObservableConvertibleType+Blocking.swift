@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67843c9e805bd2acbdada157eebcfb7c7fb349ebda0b484c38408bab079f11a1
-size 706
+//
+//  ObservableConvertibleType+Blocking.swift
+//  RxBlocking
+//
+//  Created by Krunoslav Zaher on 7/12/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import Foundation
+
+extension ObservableConvertibleType {
+    /// Converts an Observable into a `BlockingObservable` (an Observable with blocking operators).
+    ///
+    /// - parameter timeout: Maximal time interval BlockingObservable can block without throwing `RxError.timeout`.
+    /// - returns: `BlockingObservable` version of `self`
+    public func toBlocking(timeout: TimeInterval? = nil) -> BlockingObservable<Element> {
+        return BlockingObservable(timeout: timeout, source: self.asObservable())
+    }
+}

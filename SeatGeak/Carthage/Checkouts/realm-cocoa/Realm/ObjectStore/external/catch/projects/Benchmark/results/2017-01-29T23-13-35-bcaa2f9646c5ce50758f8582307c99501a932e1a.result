@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db7fb3fd92ddc089167b24f2bc38fba7b9bcd8d793cbee032ecdda1f06584a77
-size 257
+Successful tests -- CHECK: median: 0.775769 (s), stddev: 0.014802129132136525 (s)
+Successful tests -- REQUIRE: median: 0.785235 (s), stddev: 0.03532672836834896 (s)
+Unsuccessful tests -- CHECK: median: 15.156600000000001 (s), stddev: 0.2832375673450742 (s)

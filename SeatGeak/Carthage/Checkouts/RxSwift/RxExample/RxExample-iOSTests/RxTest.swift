@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:599a71c6915f2ef998da776e9f44ca0bbbe2d1abdbd7c6aa96fb6f99f8e7b87a
-size 414
+//
+//  RxTest.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 9/11/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import XCTest
+
+class RxTest : XCTestCase {
+
+}
+
+let testError = NSError(domain: "dummyError", code: -232, userInfo: nil)
+let testError1 = NSError(domain: "dummyError1", code: -233, userInfo: nil)
+let testError2 = NSError(domain: "dummyError2", code: -234, userInfo: nil)

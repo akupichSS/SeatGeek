@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4e123df4080322d437c3548b2732a85b96a7cdd167cd11403f4feee4d2a26d9
-size 546
+//
+//  ElementIndexPair.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 6/12/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+struct ElementIndexPair<Element: Equatable, I: Equatable> : Equatable {
+    let element: Element
+    let index: I
+    
+    init(_ element: Element, _ index: I) {
+        self.element = element
+        self.index = index
+    }
+}
+
+func == <Element, I>(lhs: ElementIndexPair<Element, I>, rhs: ElementIndexPair<Element, I>) -> Bool {
+    return lhs.element == rhs.element && lhs.index == rhs.index
+}

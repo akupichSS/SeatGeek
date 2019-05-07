@@ -1,3 +1,10 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:04c1867e661372b413532210b1fab8966ddc08d3f24ac3a73c668b71abc31260
-size 260
+#!/usr/bin/env python
+
+from  __future__ import  print_function
+import releaseCommon
+
+v = releaseCommon.Version()
+v.incrementMajorVersion()
+releaseCommon.performUpdates(v)
+
+print( "Updated Version.hpp, README and Conan to v{0}".format( v.getVersionString() ) )

@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dceb0f79838569c86aeda0ea0833f4184983009707253aab08a3da68b66c3d7b
-size 758
+//
+//  UITabBarItem+RxTests.swift
+//  Tests
+//
+//  Created by Mateusz Derks on 04/03/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import RxCocoa
+import UIKit
+import XCTest
+
+final class UITabBarItemTests : RxTest {
+}
+
+extension UITabBarItemTests {
+    func testBadgeValue_Text() {
+        let subject = UITabBarItem(tabBarSystemItem: .more, tag: 0)
+        Observable.just("5").subscribe(subject.rx.badgeValue).dispose()
+        
+        XCTAssertEqual(subject.badgeValue, "5")
+    }
+    
+    func testBadgeValue_Empty() {
+        let subject = UITabBarItem(tabBarSystemItem: .more, tag: 0)
+        Observable.just(nil).subscribe(subject.rx.badgeValue).dispose()
+        
+        XCTAssertNil(subject.badgeValue)
+    }
+}

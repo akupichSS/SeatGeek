@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4a6d55a925db7ef5e0cd838d0fc351c15571611d4945765f4bc93d3d60ff08db
-size 683
+//
+//  UINavigationController+Extensions.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 12/13/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+struct Colors {
+    static let offlineColor = UIColor(red: 1.0, green: 0.6, blue: 0.6, alpha: 1.0)
+    static let onlineColor = nil as UIColor?
+}
+
+extension Reactive where Base: UINavigationController {
+    var isOffline: Binder<Bool> {
+        return Binder(base) { navigationController, isOffline in
+            navigationController.navigationBar.barTintColor = isOffline
+                ? Colors.offlineColor
+                : Colors.onlineColor
+        }
+    }
+}

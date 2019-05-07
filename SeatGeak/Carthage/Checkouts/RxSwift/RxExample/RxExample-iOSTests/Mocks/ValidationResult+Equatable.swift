@@ -1,3 +1,28 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0d3d0b0352d79e185d3c6d38d8437f19b1ab307a26bae1d650a0fa35b8ab3e20
-size 555
+//
+//  ValidationResult+Equatable.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 12/29/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+// MARK: Equatable
+
+extension ValidationResult : Equatable {
+
+}
+
+func == (lhs: ValidationResult, rhs: ValidationResult) -> Bool {
+    switch (lhs, rhs) {
+    case (.ok, .ok):
+        return true
+    case (.empty, .empty):
+        return true
+    case (.validating, .validating):
+        return true
+    case (.failed, .failed):
+        return true
+    default:
+        return false
+    }
+}

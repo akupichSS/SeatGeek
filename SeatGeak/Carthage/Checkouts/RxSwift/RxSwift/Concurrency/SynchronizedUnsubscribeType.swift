@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:96e19166e573c6abba57849cd1bcd9072553542429461fb9fa4bf604e8a04b31
-size 303
+//
+//  SynchronizedUnsubscribeType.swift
+//  RxSwift
+//
+//  Created by Krunoslav Zaher on 10/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+protocol SynchronizedUnsubscribeType : class {
+    associatedtype DisposeKey
+
+    func synchronizedUnsubscribe(_ disposeKey: DisposeKey)
+}

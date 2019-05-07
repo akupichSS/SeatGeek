@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61ae406dc986ffc178e3766779960604b255a2c825dafd393b0c92f8cb70c13d
-size 609
+. scripts/common.sh
+
+function updateDocs() {
+  WORKSPACE=$1
+  SCHEME=$2
+  CONFIGURATION=$3
+  SIMULATOR=$4
+  MODULE=$5
+
+  ensure_simulator_available "${SIMULATOR}"
+  SIMULATOR_GUID=`simulator_ids "${SIMULATOR}"`
+  DESTINATION='id='$SIMULATOR_GUID''
+
+  set -x
+  killall Simulator || true
+  jazzy --config .jazzy.yml -m "${MODULE}" -x -workspace,"${WORKSPACE}",-scheme,"${SCHEME}",-configuration,"${CONFIGURATION}",-derivedDataPath,"${BUILD_DIRECTORY}",-destination,"$DESTINATION"
+  set +x
+}
+
+./scripts/update-jazzy-config.rb
+
+updateDocs Rx.xcworkspace "RxExample-iOS" "Release" $DEFAULT_IOS_SIMULATOR "RxSwift"

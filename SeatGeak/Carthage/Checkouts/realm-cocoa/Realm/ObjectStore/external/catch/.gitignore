@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3e7f7c2da6b30d398b80751cc669e5488221cf2941d4f56cd8a6e03b4652b6fb
-size 487
+*.build
+*.pbxuser
+*.mode1v3
+*.ncb
+*.suo
+Debug
+Release
+*.user
+*.xcuserstate
+.DS_Store
+xcuserdata
+CatchSelfTest.xcscheme
+Breakpoints.xcbkptlist
+projects/VS2010/TestCatch/_UpgradeReport_Files/
+projects/VS2010/TestCatch/TestCatch/TestCatch.vcxproj.filters
+projects/VisualStudio/TestCatch/UpgradeLog.XML
+projects/CMake/.idea
+projects/CMake/cmake-build-debug
+UpgradeLog.XML
+Resources/DWARF
+projects/Generated
+*.pyc
+DerivedData
+*.xccheckout
+Build
+.idea
+cmake-build-debug
+cmake-build-release
+.vs

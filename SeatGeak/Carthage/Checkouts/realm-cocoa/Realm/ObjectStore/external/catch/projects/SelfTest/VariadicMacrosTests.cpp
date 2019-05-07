@@ -1,3 +1,31 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d8cbdf57c6390c8128fd9d1dbbe7781098def795db276ee44076d125c3e6f7a8
-size 613
+/*
+ *  Created by Phil on 15/03/2013.
+ *  Copyright 2013 Two Blue Cubes Ltd. All rights reserved.
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+
+#include "catch.hpp"
+
+#ifdef CATCH_CONFIG_VARIADIC_MACROS
+
+TEST_CASE()
+{
+    SUCCEED( "anonymous test case" );
+}
+
+TEST_CASE( "Test case with one argument" )
+{
+    SUCCEED( "no assertions" );
+}
+
+TEST_CASE( "Variadic macros", "[variadic][sections]" )
+{
+    SECTION( "Section with one argument" )
+    {
+        SUCCEED( "no assertions" );
+    }
+}
+
+#endif

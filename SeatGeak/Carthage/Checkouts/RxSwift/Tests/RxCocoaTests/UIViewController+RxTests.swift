@@ -1,3 +1,25 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ac2c0f1e23e5e9f7ed60a5e2fe1885e17db3341767483c237a191979b96b3b10
-size 489
+//
+//  UIViewController+RxTests.swift
+//  Tests
+//
+//  Created by Kyle Fuller on 30/05/2016.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import RxCocoa
+import UIKit
+import XCTest
+
+final class UIViewControllerTests : RxTest {
+}
+
+extension UIViewControllerTests {
+  func testRxTitle() {
+    let viewController = UIViewController()
+
+    _ = Observable.just("title").bind(to: viewController.rx.title)
+
+    XCTAssertEqual("title", viewController.title)
+  }
+}

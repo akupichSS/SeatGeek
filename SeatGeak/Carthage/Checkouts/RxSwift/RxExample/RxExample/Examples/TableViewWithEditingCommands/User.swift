@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:633189f9a4c5344c46ba9b0f54003535d482f3b9c60129fbe5d120285cb7b461
-size 726
+//
+//  User.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 12/29/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+struct User: Equatable, CustomDebugStringConvertible {
+    
+    var firstName: String
+    var lastName: String
+    var imageURL: String
+    
+    init(firstName: String, lastName: String, imageURL: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.imageURL = imageURL
+    }
+}
+
+extension User {
+    var debugDescription: String {
+        return firstName + " " + lastName
+    }
+}
+
+func ==(lhs: User, rhs:User) -> Bool {
+    return lhs.firstName == rhs.firstName &&
+        lhs.lastName == rhs.lastName &&
+        lhs.imageURL == rhs.imageURL
+}

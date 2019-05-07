@@ -1,3 +1,24 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0c23f1b606303f594a3546d78d80bcadf55fcc2238f6a26940349f26d594a4e0
-size 732
+//
+//  SubjectType.swift
+//  RxSwift
+//
+//  Created by Krunoslav Zaher on 3/1/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+/// Represents an object that is both an observable sequence as well as an observer.
+public protocol SubjectType : ObservableType {
+    /// The type of the observer that represents this subject.
+    ///
+    /// Usually this type is type of subject itself, but it doesn't have to be.
+    associatedtype Observer: ObserverType
+
+    @available(*, deprecated, message: "Use `Observer` instead.")
+    typealias SubjectObserverType = Observer
+
+    /// Returns observer interface for subject.
+    ///
+    /// - returns: Observer interface for subject.
+    func asObserver() -> Observer
+    
+}

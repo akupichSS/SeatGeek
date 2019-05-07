@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dd1f18a4b872fcab9bd89b46a20356dde18f9b32a72033cab6702844662b537a
-size 286
+//
+//  UITableView+Extensions.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 8/20/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+
+extension UITableView {
+    func hideEmptyCells() {
+        self.tableFooterView = UIView(frame: .zero)
+    }
+}

@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d952f1087bab8d278cb34f0592490b277349ff6996323066c68ceff600ca54a5
-size 643
+//
+//  NopDisposable.swift
+//  RxSwift
+//
+//  Created by Krunoslav Zaher on 2/15/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+/// Represents a disposable that does nothing on disposal.
+///
+/// Nop = No Operation
+fileprivate struct NopDisposable : Disposable {
+ 
+    fileprivate static let noOp: Disposable = NopDisposable()
+    
+    fileprivate init() {
+        
+    }
+    
+    /// Does nothing.
+    public func dispose() {
+    }
+}
+
+extension Disposables {
+    /**
+     Creates a disposable that does nothing on disposal.
+     */
+    static public func create() -> Disposable {
+        return NopDisposable.noOp
+    }
+}

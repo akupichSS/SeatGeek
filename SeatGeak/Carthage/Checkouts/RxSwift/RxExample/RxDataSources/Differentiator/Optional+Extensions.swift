@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:172ca08a13c134d7ab0d74e136347850bec41ca8a707794557fc503df82d5827
-size 464
+//
+//  Optional+Extensions.swift
+//  RxDataSources
+//
+//  Created by Krunoslav Zaher on 1/8/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import Foundation
+
+extension Optional {
+    func unwrap() throws -> Wrapped {
+        if let unwrapped = self {
+            return unwrapped
+        }
+        else {
+            debugFatalError("Error during unwrapping optional")
+            throw DifferentiatorError.unwrappingOptional
+        }
+   }
+}

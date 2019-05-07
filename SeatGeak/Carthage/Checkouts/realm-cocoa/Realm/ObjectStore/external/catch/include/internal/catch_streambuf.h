@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3316085ea99a640766919383c1732323d03d9b6671a359d703d6b13d9398bb6f
-size 611
+/*
+ *  Created by Phil on 27/11/2012.
+ *  Copyright 2012 Two Blue Cubes Ltd. All rights reserved.
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+#ifndef TWOBLUECUBES_CATCH_STREAMBUF_H_INCLUDED
+#define TWOBLUECUBES_CATCH_STREAMBUF_H_INCLUDED
+
+#include "catch_compiler_capabilities.h"
+
+#include <streambuf>
+
+namespace Catch {
+
+    class StreamBufBase : public std::streambuf {
+    public:
+        virtual ~StreamBufBase() CATCH_NOEXCEPT;
+    };
+}
+
+#endif // TWOBLUECUBES_CATCH_STREAMBUF_H_INCLUDED

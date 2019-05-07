@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c0d1486f8318ad07543abcf86f7b0982956db2bf39eb90f835998de7f35e6c4d
-size 370
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "ReactiveExtensionsLogo.png"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "filename" : "ReactiveExtensionsLogo-2.png"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

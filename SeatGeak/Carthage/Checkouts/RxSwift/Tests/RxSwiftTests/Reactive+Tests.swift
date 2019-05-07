@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51f5ddf034d038ecceae057f0d40a3e1b4da9a8cd1fdd11e0d79aec640e65a36
-size 824
+//
+//  Reactive+Tests.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 10/16/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+import XCTest
+
+class ReactiveTests: RxTest {
+}
+
+final class MyObject {
+    fileprivate var _something: String = "" // this emulates associated objects
+}
+
+extension MyObject: ReactiveCompatible {
+    
+}
+
+extension Reactive where Base: MyObject {
+    var somethingPublic: String {
+        get {
+            return base._something
+        }
+        set {
+            base._something = newValue
+        }
+    }
+}
+
+extension ReactiveTests {
+    func testEnablesMutations() {
+        var object = MyObject()
+
+        object.rx.somethingPublic = "Aha"
+
+        XCTAssertEqual(object._something, "Aha")
+        XCTAssertEqual(object.rx.somethingPublic, "Aha")
+    }
+}

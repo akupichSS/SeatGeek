@@ -1,3 +1,40 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:691595d4eee430e74e24360a870682ae94de3dba39009cc8891c53bf5812eac1
-size 957
+//
+//  CollectionViewImageCell.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 4/4/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+public class CollectionViewImageCell: UICollectionViewCell {
+    @IBOutlet var imageOutlet: UIImageView!
+    
+    var disposeBag: DisposeBag?
+
+    var downloadableImage: Observable<DownloadableImage>?{
+        didSet{
+            let disposeBag = DisposeBag()
+
+            self.downloadableImage?
+                .asDriver(onErrorJustReturn: DownloadableImage.offlinePlaceholder)
+                .drive(imageOutlet.rx.downloadableImageAnimated(CATransitionType.fade.rawValue))
+                .disposed(by: disposeBag)
+
+            self.disposeBag = disposeBag
+        }
+    }
+    
+    override public func prepareForReuse() {
+        super.prepareForReuse()
+        
+        downloadableImage = nil
+        disposeBag = nil
+    }
+
+    deinit {
+    }
+}

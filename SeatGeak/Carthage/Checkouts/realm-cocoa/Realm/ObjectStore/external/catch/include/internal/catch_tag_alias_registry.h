@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48cdd3f20d1c3c2fc54c4261fd94b860b7d29abe5c704a137513c7c309f97af4
-size 988
+/*
+ *  Created by Phil on 27/6/2014.
+ *  Copyright 2014 Two Blue Cubes Ltd. All rights reserved.
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+#ifndef TWOBLUECUBES_CATCH_TAG_ALIAS_REGISTRY_H_INCLUDED
+#define TWOBLUECUBES_CATCH_TAG_ALIAS_REGISTRY_H_INCLUDED
+
+#include "catch_interfaces_tag_alias_registry.h"
+
+#include <map>
+
+namespace Catch {
+
+    class TagAliasRegistry : public ITagAliasRegistry {
+    public:
+        virtual ~TagAliasRegistry();
+        virtual Option<TagAlias> find( std::string const& alias ) const;
+        virtual std::string expandAliases( std::string const& unexpandedTestSpec ) const;
+        void add( std::string const& alias, std::string const& tag, SourceLineInfo const& lineInfo );
+
+    private:
+        std::map<std::string, TagAlias> m_registry;
+    };
+
+} // end namespace Catch
+
+#endif // TWOBLUECUBES_CATCH_TAG_ALIAS_REGISTRY_H_INCLUDED

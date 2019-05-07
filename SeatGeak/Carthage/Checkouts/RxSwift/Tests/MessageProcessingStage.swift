@@ -1,3 +1,37 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ea242b398f6dfbd716ea5c9e1ec15e4fe2dfae6ac580ac9a10990a0cab5b7173
-size 1062
+//
+//  MessageProcessingStage.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 10/2/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+
+enum MessageProcessingStage: Int {
+    // message is first sent to an objet
+    case sentMessage = 0
+    // ... then it's being invoked
+    case invoking = 1
+    // ... and after method is invoked
+    case methodInvoked = 2
+}
+
+typealias MethodParameters = [Any]
+
+struct ObservedSequence {
+    let stage: MessageProcessingStage
+    let sequence: Observable<MethodParameters>
+
+    static func sentMessage(_ sequence: Observable<MethodParameters>) -> ObservedSequence {
+        return ObservedSequence(stage: .sentMessage, sequence: sequence)
+    }
+
+    static func invoking(_ sequence: Observable<MethodParameters>) -> ObservedSequence {
+        return ObservedSequence(stage: .invoking, sequence: sequence)
+    }
+
+    static func methodInvoked(_ sequence: Observable<MethodParameters>) -> ObservedSequence {
+        return ObservedSequence(stage: .methodInvoked, sequence: sequence)
+    }
+}

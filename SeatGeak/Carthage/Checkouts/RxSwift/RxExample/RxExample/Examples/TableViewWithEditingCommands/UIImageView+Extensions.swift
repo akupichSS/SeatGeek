@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5b2f0f3016db3f21372e78be54403a8fa73849a5ed08a2d3d725e4685a62fc60
-size 430
+//
+//  UIImageView+Extensions.swift
+//  RxExample
+//
+//  Created by carlos on 28/5/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+
+extension UIImageView {
+    
+    func makeRoundedCorners(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
+
+    func makeRoundedCorners() {
+        self.makeRoundedCorners(self.frame.size.width / 2)
+    }
+}

@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:99031ce5c84dfd012f73c31bd0ce72ffa66a7d52902508b9e7e52812ae95a34c
-size 518
+//
+//  Logging.swift
+//  RxCocoa
+//
+//  Created by Krunoslav Zaher on 4/3/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import struct Foundation.URLRequest
+
+/// Simple logging settings for RxCocoa library.
+public struct Logging {
+    public typealias LogURLRequest = (URLRequest) -> Bool
+    
+    /// Log URL requests to standard output in curl format.
+    public static var URLRequests: LogURLRequest =  { _ in
+    #if DEBUG
+        return true
+    #else
+        return false
+    #endif
+    }
+}

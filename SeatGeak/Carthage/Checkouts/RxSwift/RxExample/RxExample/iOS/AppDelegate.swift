@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f1f9f12d9ab424129d412254b1b670ee5841648877447da7ca422b95768a64ab
-size 891
+//
+//  AppDelegate.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 2/21/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        if UIApplication.isInUITest {
+            UIView.setAnimationsEnabled(false)
+        }
+
+        RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
+
+        #if DEBUG
+        _ = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                print("Resource count \(RxSwift.Resources.total)")
+            })
+        #endif
+
+        return true
+    }
+}
+

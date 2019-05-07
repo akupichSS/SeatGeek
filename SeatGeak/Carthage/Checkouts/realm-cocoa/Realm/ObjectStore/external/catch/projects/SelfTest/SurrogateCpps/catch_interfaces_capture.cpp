@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f613161678a760ee6cdfe6737fed502ffb6d839e4f272617e56ea7c2506615e4
-size 189
+// This file is only here to verify (to the extent possible) the self sufficiency of the header
+#include "internal/catch_suppress_warnings.h"
+#include "internal/catch_interfaces_capture.h"

@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ede334f38bd77572b615b0bc3f51ed7d3957f384883c6d5a3535972b6fe900f2
-size 348
+//
+//  TestErrors.swift
+//  Tests
+//
+//  Created by Krunoslav Zaher on 12/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+enum TestError: Error {
+    case dummyError
+    case dummyError1
+    case dummyError2
+}
+let testError = TestError.dummyError
+let testError1 = TestError.dummyError1
+let testError2 = TestError.dummyError2

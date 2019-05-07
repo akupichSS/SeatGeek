@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2f21880f68b42c16b73903ebda827aa6fcfd496be93078dcde8357575c6e9656
-size 836
+//
+//  MockGitHubAPI.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 12/29/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+
+class MockGitHubAPI : GitHubAPI {
+    let _usernameAvailable: (String) -> Observable<Bool>
+    let _signup: ((String, String)) -> Observable<Bool>
+
+    init(
+        usernameAvailable: @escaping (String) -> Observable<Bool> = notImplemented(),
+        signup: @escaping ((String, String)) -> Observable<Bool> = notImplemented()
+        ) {
+        _usernameAvailable = usernameAvailable
+        _signup = signup
+    }
+
+    func usernameAvailable(_ username: String) -> Observable<Bool> {
+        return _usernameAvailable(username)
+    }
+
+    func signup(_ username: String, password: String) -> Observable<Bool> {
+        return _signup((username, password))
+    }
+}

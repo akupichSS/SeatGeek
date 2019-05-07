@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:c2670927dee951d0e644a3796a6e78f95beb3dad559cd33fdf7cde6c0177c8e7
-size 256
+#include "Tests.xcconfig"
+
+CONFIGURATION_BUILD_DIR = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)-static;
+IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+
+TEST_HOST[sdk=iphone*] = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TestHost.app/TestHost;

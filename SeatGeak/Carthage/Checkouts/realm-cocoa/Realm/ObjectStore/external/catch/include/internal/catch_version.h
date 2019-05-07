@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0d1410d0ea163a895e7dfa89c01d60dc9ac693d17638eae156bf04aa423e342
-size 1172
+/*
+ *  Created by Phil on 13/11/2012.
+ *  Copyright 2012 Two Blue Cubes Ltd. All rights reserved.
+ *
+ *  Distributed under the Boost Software License, Version 1.0. (See accompanying
+ *  file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+ */
+#ifndef TWOBLUECUBES_CATCH_VERSION_H_INCLUDED
+#define TWOBLUECUBES_CATCH_VERSION_H_INCLUDED
+
+namespace Catch {
+
+    // Versioning information
+    struct Version {
+        Version(    unsigned int _majorVersion,
+                    unsigned int _minorVersion,
+                    unsigned int _patchNumber,
+                    char const * const _branchName,
+                    unsigned int _buildNumber );
+
+        unsigned int const majorVersion;
+        unsigned int const minorVersion;
+        unsigned int const patchNumber;
+
+        // buildNumber is only used if branchName is not null
+        char const * const branchName;
+        unsigned int const buildNumber;
+
+        friend std::ostream& operator << ( std::ostream& os, Version const& version );
+
+    private:
+        void operator=( Version const& );
+    };
+
+    inline Version libraryVersion();
+}
+
+#endif // TWOBLUECUBES_CATCH_VERSION_H_INCLUDED

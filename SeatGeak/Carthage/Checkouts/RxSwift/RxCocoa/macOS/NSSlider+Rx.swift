@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d3bbea32825ae9cf50a4b4681879ade26b7402abccafa64f85b6db0315aa1171
-size 593
+//
+//  NSSlider+Rx.swift
+//  RxCocoa
+//
+//  Created by Junior B. on 24/05/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+#if os(macOS)
+
+import RxSwift
+import Cocoa
+
+extension Reactive where Base: NSSlider {
+    
+    /// Reactive wrapper for `value` property.
+    public var value: ControlProperty<Double> {
+        return self.base.rx.controlProperty(
+            getter: { control in
+                return control.doubleValue
+            },
+            setter: { control, value in
+                control.doubleValue = value
+            }
+        )
+    }
+    
+}
+
+#endif

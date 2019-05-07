@@ -1,3 +1,12 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:514b3d17efe2d92aace6a542e6a1cdf39abb94a0e0fef83168ca94d9828f9b1f
-size 213
+//
+//  Result.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 3/18/17.
+//  Copyright © 2017 Krunoslav Zaher. All rights reserved.
+//
+
+enum Result<T, E: Error> {
+    case success(T)
+    case failure(E)
+}

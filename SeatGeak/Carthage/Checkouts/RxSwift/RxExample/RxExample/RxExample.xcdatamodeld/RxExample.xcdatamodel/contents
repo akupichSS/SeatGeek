@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:389b99e3abfd72139336ea2e2ce63576fc6a0a82ec13cf55efd96fb6d3a983ce
-size 347
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <elements/>
+</model>

@@ -1,3 +1,4 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:533f9ace416f9625e6cc21189dca48b39ff691d73365dfadbf5c5c57987130aa
-size 262
+ROOT=`pwd`
+pushd `npm root -g`
+remark -u remark-slug -u remark-validate-links "${ROOT}/*.md" "${ROOT}/**/*.md" "${ROOT}/.github/ISSUE_TEMPLATE.md" "${ROOT}/RxExample/" "${ROOT}/RxCocoa/Foundation/KVORepresentable+CoreGraphics.swift" "${ROOT}/Rx.playground"
+popd

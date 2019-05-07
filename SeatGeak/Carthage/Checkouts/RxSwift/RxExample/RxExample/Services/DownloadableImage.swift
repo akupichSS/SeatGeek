@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c9400b20cc00a8caef4735c5fdcd16d9f3392e9456c199d2fe9b5523dc4f9b5
-size 327
+//
+//  DownloadableImage.swift
+//  RxExample
+//
+//  Created by Vodovozov Gleb on 10/31/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import Cocoa
+#endif
+
+enum DownloadableImage{
+    case content(image:Image)
+    case offlinePlaceholder
+
+}

@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47a7dbcac8f2560aaf024747a42dced990be50a038025b7fb3cdb7e69d44e799
-size 999
+//
+//  Array+Extensions.swift
+//  RxDataSources
+//
+//  Created by Krunoslav Zaher on 4/26/16.
+//  Copyright © 2016 Krunoslav Zaher. All rights reserved.
+//
+
+#if os(iOS) || os(tvOS)
+import Foundation
+
+extension Array where Element: SectionModelType {
+    mutating func moveFromSourceIndexPath(_ sourceIndexPath: IndexPath, destinationIndexPath: IndexPath) {
+        let sourceSection = self[sourceIndexPath.section]
+        var sourceItems = sourceSection.items
+
+        let sourceItem = sourceItems.remove(at: sourceIndexPath.item)
+
+        let sourceSectionNew = Element(original: sourceSection, items: sourceItems)
+        self[sourceIndexPath.section] = sourceSectionNew
+
+        let destinationSection = self[destinationIndexPath.section]
+        var destinationItems = destinationSection.items
+        destinationItems.insert(sourceItem, at: destinationIndexPath.item)
+
+        self[destinationIndexPath.section] = Element(original: destinationSection, items: destinationItems)
+    }
+}
+#endif

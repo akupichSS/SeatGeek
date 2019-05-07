@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2cff9df2af0c45e7ade0bbbfe0af42cb1a1a28606413af445a16481bc8823d85
-size 781
+//
+//  TestableObserver.swift
+//  RxTest
+//
+//  Created by Krunoslav Zaher on 2/15/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import RxSwift
+
+/// Observer that records events together with virtual time when they were received.
+public final class TestableObserver<Element>
+    : ObserverType {
+    fileprivate let _scheduler: TestScheduler
+
+    /// Recorded events.
+    public fileprivate(set) var events = [Recorded<Event<Element>>]()
+    
+    init(scheduler: TestScheduler) {
+        self._scheduler = scheduler
+    }
+
+    /// Notify observer about sequence event.
+    ///
+    /// - parameter event: Event that occurred.
+    public func on(_ event: Event<Element>) {
+        self.events.append(Recorded(time: self._scheduler.clock, value: event))
+    }
+}

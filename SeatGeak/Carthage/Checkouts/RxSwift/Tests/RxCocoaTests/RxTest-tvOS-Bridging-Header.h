@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5fd24703ea721d892a7053dee62710a0d925711268abf9ebb983985aaff4a2a8
-size 192
+//
+//  RxTest-tvOS-Bridging-Header.h
+//  Tests
+//
+//  Created by Krunoslav Zaher on 11/25/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+#import "RXObjCRuntime+Testing.h"

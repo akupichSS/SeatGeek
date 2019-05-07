@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d49a2967a4bc30c9a8817a0fa4311031db46b94e8ec44d2bcbff319a03e7da06
-size 840
+//
+//  RootViewController.swift
+//  RxExample
+//
+//  Created by Krunoslav Zaher on 4/6/15.
+//  Copyright © 2015 Krunoslav Zaher. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+public class RootViewController : UITableViewController {
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        // force load
+        _ = GitHubSearchRepositoriesAPI.sharedAPI
+        _ = DefaultWikipediaAPI.sharedAPI
+        _ = DefaultImageService.sharedImageService
+        _ = DefaultWireframe.shared
+        _ = MainScheduler.instance
+        _ = Dependencies.sharedDependencies.reachabilityService
+        
+        let geoService = GeolocationService.instance
+        geoService.authorized.drive(onNext: { _ in
+
+        }).dispose()
+        geoService.location.drive(onNext: { _ in
+
+        }).dispose()
+    }
+}

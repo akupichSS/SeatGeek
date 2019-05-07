@@ -1,3 +1,21 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:47577b51f7b84722b03ae9b7dc71714ab66d1950219c369ad554d84ae12c996e
-size 575
+#!/usr/bin/env python
+from os import getenv
+from os import path
+from conans import ConanFile
+from conans import CMake
+
+
+class CatchConanTest(ConanFile):
+    generators = "cmake"
+    settings = "os", "compiler", "arch", "build_type"
+    username = getenv("CONAN_USERNAME", "philsquared")
+    channel = getenv("CONAN_CHANNEL", "testing")
+    requires = "Catch/1.12.2@%s/%s" % (username, channel)
+
+    def build(self):
+        cmake = CMake(self)
+        cmake.configure(build_dir="./")
+        cmake.build()
+
+    def test(self):
+        self.run(path.join("bin", "CatchTest"))

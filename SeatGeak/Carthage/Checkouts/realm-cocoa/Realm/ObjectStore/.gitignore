@@ -1,3 +1,32 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d19ce427b4386cf2339ad3884da8aa4ccd26bc3dd132ff730a0dae1d574e27e4
-size 353
+# CMake
+.ninja_deps
+.ninja_log
+CMakeCache.txt
+CMakeFiles/
+Makefile
+build.ninja
+cmake_install.cmake
+rules.ninja
+CMakeScripts/
+realm-object-store.xcodeproj/
+
+# Build products
+src/librealm-object-store.a
+tests/tests
+*.build/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# IntelliJ
+.idea/
+
+# Visual Studio
+/.vs
+
+# Linters
+compile_commands.json
+
+# vim
+*.swp
