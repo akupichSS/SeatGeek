@@ -38,6 +38,13 @@ class EventsViewController: UIViewController, BindableViewController {
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: self.disposeBag)
         
+        // TODO: use switch-case and display proper message for each case
+        viewModel.onShowError
+            .subscribeOn(MainScheduler.instance)
+            .map { print ("API ERROR: \($0)") }
+            .subscribe()
+            .disposed(by: disposeBag)
+        
         let searchInput = searchBar.rx.text.orEmpty
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()

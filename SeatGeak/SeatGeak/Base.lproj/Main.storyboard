@@ -248,7 +248,7 @@
                             <constraint firstItem="byR-qd-FjO" firstAttribute="leading" secondItem="9Z3-80-AqD" secondAttribute="leading" id="4S9-ap-gIW"/>
                             <constraint firstItem="byR-qd-FjO" firstAttribute="trailing" secondItem="9Z3-80-AqD" secondAttribute="trailing" id="DU7-jL-VpZ"/>
                             <constraint firstItem="ODD-Bm-TWj" firstAttribute="leading" secondItem="AUW-Ft-bcZ" secondAttribute="leading" id="Fdx-EW-IEs"/>
-                            <constraint firstItem="ODD-Bm-TWj" firstAttribute="top" secondItem="NhP-of-SZ6" secondAttribute="top" constant="58" id="Uqm-1g-3CO"/>
+                            <constraint firstItem="ODD-Bm-TWj" firstAttribute="top" secondItem="AUW-Ft-bcZ" secondAttribute="top" constant="14" id="Uqm-1g-3CO"/>
                             <constraint firstItem="ODD-Bm-TWj" firstAttribute="trailing" secondItem="AUW-Ft-bcZ" secondAttribute="trailing" id="a56-vg-Ggq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AUW-Ft-bcZ"/>

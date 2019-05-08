@@ -23,7 +23,7 @@ struct EventsViewModel {
     let searchText = BehaviorSubject(value: "")
     
     let sectionsWithEvents = BehaviorSubject<[EventsSection]>(value: [])
-    let onError = PublishSubject<Error>()
+    let onShowError = PublishSubject<Error>()
     
     init(apiClient: APIClient, storage: EventsStorageType, coordinator: SceneCoordinatorType) {
         self.apiClient = apiClient
@@ -58,8 +58,7 @@ struct EventsViewModel {
         
         model
             .onError
-            .subscribeOn(MainScheduler.instance)
-            .bind(to: onError)
+            .bind(to: onShowError)
             .disposed(by: disposeBag)
     }
     
