@@ -15,6 +15,7 @@ struct EventsList {
     
     func fetchEvents(for query:String, using apiClient:APIClient) {
         Observable.just(SearchRequest(query: query))
+            .concat(Observable.never()) // keep it alive until dispose bag become nil
             .flatMap { request in
                 return apiClient.eventsSearch(request: request)
             }.map { result -> [EventItem] in
@@ -24,8 +25,8 @@ struct EventsList {
                 case .failure(let error):
                     self.onError.onNext(error)
                     return []
-                }
-        }.bind(to: events)
-        .disposed(by: disposeBag)
+                }}
+            .bind(to: events)
+            .disposed(by: disposeBag)
     }
 }
