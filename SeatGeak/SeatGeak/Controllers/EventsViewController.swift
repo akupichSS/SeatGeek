@@ -51,11 +51,13 @@ class EventsViewController: UIViewController, BindableViewController {
         
         let searchClick = searchBar.rx.searchButtonClicked.map{""}
         
+        // click search on keyboard or just type in the text - both fire search request
         Observable
             .concat(searchInput, searchClick)
             .bind(to: viewModel.searchText)
             .disposed(by: disposeBag)
         
+        // hide keyboard on search or cancel actions
         Observable
             .of(searchBar.rx.searchButtonClicked, searchBar.rx.cancelButtonClicked)
             .merge()

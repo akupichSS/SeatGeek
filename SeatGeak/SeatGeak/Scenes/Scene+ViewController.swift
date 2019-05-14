@@ -10,6 +10,7 @@ import UIKit
 
 extension Scene {
     func viewController() -> UIViewController {
+        // TODO: if localization is required, would be nice 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         switch self {
         case .events(let viewModel):

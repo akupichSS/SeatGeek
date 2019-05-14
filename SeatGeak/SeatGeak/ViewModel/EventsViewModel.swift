@@ -42,6 +42,7 @@ struct EventsViewModel {
                 self.model.fetchEvents(for: $0, using: self.apiClient)
             }).disposed(by: disposeBag)
         
+        // TODO: bind also cancel action here to cancel request
     }
     
     func bindOutput() {

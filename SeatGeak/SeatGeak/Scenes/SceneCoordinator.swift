@@ -42,6 +42,7 @@ class SceneCoordinator: SceneCoordinatorType {
             
         case .push:
             guard let navigationController = currentViewController.navigationController else {
+                // Fatal error used temporary. Should return proper error and log this error into console
                 fatalError("Can't push a view controller without a current navigation controller")
             }
             // one-off subscription to be notified when push complete
@@ -68,7 +69,6 @@ class SceneCoordinator: SceneCoordinatorType {
     func pop(animated: Bool) -> Completable {
         let subject = PublishSubject<Void>()
         if let presenter = currentViewController.presentingViewController {
-            // dismiss a modal controller
             currentViewController.dismiss(animated: animated) {
                 self.currentViewController = SceneCoordinator.actualViewController(for: presenter)
                 subject.onCompleted()
@@ -81,10 +81,12 @@ class SceneCoordinator: SceneCoordinatorType {
                 .map { _ in }
                 .bind(to: subject)
             guard navigationController.popViewController(animated: animated) != nil else {
+                // Fatal error used temporary. Should return proper error and log this error into console
                 fatalError("can't navigate back from \(currentViewController)")
             }
             currentViewController = SceneCoordinator.actualViewController(for: navigationController.viewControllers.last!)
         } else {
+            //Fatal error used temporary. Should return proper error and log this error into console
             fatalError("Not a modal, no navigation controller: can't navigate back from \(currentViewController)")
         }
         return subject.asObservable().take(1).ignoreElements()

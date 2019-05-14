@@ -31,6 +31,7 @@ class EventDetailsViewController: UIViewController, BindableViewController {
                 self?.setupData(event: event)
             }).disposed(by: disposeBag)
         
+        // change icon of button to show if event is liked
         viewModel.onLike
             .bind(to: navView.rightNavigationButton.rx.isSelected)
             .disposed(by: disposeBag)

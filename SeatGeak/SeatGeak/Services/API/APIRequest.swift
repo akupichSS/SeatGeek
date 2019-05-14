@@ -26,6 +26,9 @@ extension APIRequest {
     
     func request(with baseURL: URL) -> URLRequest {
         guard var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
+            // make optional return value and handle it everywhere this method is used.
+            
+            // TODO: "fatalError" is temporary and should be removed in release version
             fatalError("Unable to create URL components")
         }
         
@@ -35,6 +38,7 @@ extension APIRequest {
         components.queryItems?.append(URLQueryItem(name: "client_id", value: clientID))
         
         guard let url = components.url else {
+            // TODO: "fatalError" is temporary and should be removed in release version
             fatalError("Could not get url")
         }
         
